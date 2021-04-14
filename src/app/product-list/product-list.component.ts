@@ -15,6 +15,7 @@ export class ProductListComponent implements OnInit {
   this.products = [];
   }
  ngOnInit() {}
+ 
  selectedProduct(productComponent: ProductItemComponent) {
   alert(`Product ${productComponent.product.name} selected`);
   this.productItems.forEach(p => {

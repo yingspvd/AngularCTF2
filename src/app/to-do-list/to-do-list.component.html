@@ -1,0 +1,36 @@
+<h1 class="w-25 p-3" align="center">To Do List</h1>
+<app-task
+    *ngFor="let task of toDoList; let taskIndex = index"
+    [toDoList] = "task"
+    (OnSelected)="deleteTask($event)"
+    [toDoList.index] = taskIndex
+    >
+</app-task>
+
+
+<div class="w-25 p-3 alert alert-success" role="alert">
+    <h4 align="center">Add Task</h4>
+    <form>
+        <div class="form-group">
+          <label for="formGroupExampleInput">ID</label>
+          <input [(ngModel)] = "id" name="id" type="text" class="form-control" placeholder="Example ID">
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput2">Name</label>
+          <input [(ngModel)] = "name" name="name" type="text" class="form-control" placeholder="Enter Name">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Description</label>
+            <input [(ngModel)] = "description" name="description" type="text" class="form-control" placeholder="Enter Description">
+          </div>
+      </form>
+
+      <button (click) = "addNewTask()" type="button" class="btn btn-success btn-lg btn-block">Add Task</button>
+</div>
+
+<!--   
+<div>
+    Task : <input [(ngModel)] = "text_input">
+    <button (click) = "addTask()">Add</button>
+    
+</div> -->
