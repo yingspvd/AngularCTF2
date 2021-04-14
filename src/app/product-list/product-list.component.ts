@@ -10,22 +10,10 @@ export class ProductListComponent implements OnInit {
   products: Product[];
 
   constructor() { 
-    this.products = [];
-    this.products.push({
-      name: "ส้มโอ",
-      price:990
-    });
-    this.products.push({
-      name: 'แตงโม',
-      price: 1000
-      });
-    this.products.push({
-    name: 'มะพร้าวนํ้าหอม',
-    price: 500
-    });
+    this.products=[];
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
   selectedProduct(product: Product) {
