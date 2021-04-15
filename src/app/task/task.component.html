@@ -1,8 +1,13 @@
-
-
-<div class="w-25 p-3 alert alert-primary" role="alert">
-        <h6 >ID : {{ toDoList.id }} </h6>
-        <h6 >Name : {{ toDoList.name }}</h6>
+<div  class="w-25 p-3 alert alert-primary" [class.alert-warning]="isSelected" role="alert">
+        <div (click) = "show()">
+            <h6 >ID : {{ toDoList.id }} </h6>
+            <h6 >Name : {{ toDoList.name }}</h6>
+        </div>
+       
         <button (click) = "deleteTask()" type="submit" class="btn btn-primary mb-3">Delete</button>
 </div>
 
+<div *ngIf = "isShow" class="w-25 p-3 alert alert-secondary" role="alert">
+    <h4 align="center">Description</h4>
+    <h6>{{ toDoList.description }}</h6>
+</div>

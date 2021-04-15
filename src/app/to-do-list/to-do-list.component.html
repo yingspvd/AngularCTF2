@@ -1,10 +1,15 @@
 <h1 class="w-25 p-3" align="center">To Do List</h1>
-<app-task
+  <app-task
     *ngFor="let task of toDoList"
     [toDoList] = "task"
-    (OnSelected)="deleteTask($event)"
+    (OnDelete) = "deleteTask($event)"
+    (OnSelected)="show($event)"
+    
     >
 </app-task>
+
+
+
 
 
 <div class="w-25 p-3 alert alert-success" role="alert">
@@ -27,9 +32,3 @@
       <button (click) = "addNewTask()" type="button" class="btn btn-success btn-lg btn-block">Add Task</button>
 </div>
 
-<!--   
-<div>
-    Task : <input [(ngModel)] = "text_input">
-    <button (click) = "addTask()">Add</button>
-    
-</div> -->

@@ -11,9 +11,15 @@ export class TaskComponent implements OnInit {
   toDoList: ToDoList;
   
   @Output()
-  OnSelected: EventEmitter<ToDoList> = new EventEmitter();
+  OnDelete: EventEmitter<TaskComponent> = new EventEmitter();
 
+  @Output()
+  OnSelected: EventEmitter<TaskComponent> = new EventEmitter();
   
+
+  isSelected: boolean;
+  isShow: boolean;
+
   constructor() { 
 
   }
@@ -23,7 +29,11 @@ export class TaskComponent implements OnInit {
 
 
   deleteTask(){
-    this.OnSelected.emit(this.toDoList);
+    this.OnDelete.emit(this);
+  }
+
+  show(){
+    this.OnSelected.emit(this);
   }
 
   
