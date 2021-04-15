@@ -1,9 +1,8 @@
 <h1 class="w-25 p-3" align="center">To Do List</h1>
 <app-task
-    *ngFor="let task of toDoList; let taskIndex = index"
+    *ngFor="let task of toDoList"
     [toDoList] = "task"
     (OnSelected)="deleteTask($event)"
-    [toDoList.index] = taskIndex
     >
 </app-task>
 

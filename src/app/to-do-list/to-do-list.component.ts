@@ -13,12 +13,13 @@ export class ToDoListComponent implements OnInit {
   id : number;
   name : string;
   description : string;
+  index:number;
   tasks = [];
-  index: number;
-  val = 1;
+  remove = [];
 
   constructor() { 
     this.toDoList = [];
+   
   }
 
   addNewTask(){
@@ -26,17 +27,12 @@ export class ToDoListComponent implements OnInit {
       id: this.id,
       name: this.name,
       description: this.description});
-    
+
   }
 
-  addTask(){
-     this.tasks.push(this.id);
-     this.index = this.tasks.indexOf(this.id,0)
-     console.log(this.index);
-  }
-
-  deleteTask(index){
-    this.toDoList.splice(index,1);
+  deleteTask(toDoList : ToDoList){
+    this.index = this.toDoList.indexOf(toDoList);
+    this.toDoList.splice(this.index,1);
   }
   
 

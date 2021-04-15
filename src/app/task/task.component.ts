@@ -11,18 +11,20 @@ export class TaskComponent implements OnInit {
   toDoList: ToDoList;
   
   @Output()
-  OnSelected: EventEmitter<TaskComponent> = new EventEmitter();
+  OnSelected: EventEmitter<ToDoList> = new EventEmitter();
 
   
   constructor() { 
 
   }
 
-  deleteTask(){
-    this.OnSelected.emit(this);
-  }
-
   ngOnInit(): void {
   }
 
+
+  deleteTask(){
+    this.OnSelected.emit(this.toDoList);
+  }
+
+  
 }
