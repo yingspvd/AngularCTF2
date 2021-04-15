@@ -1,14 +1,8 @@
 
 
 <div class="w-25 p-3 alert alert-primary" role="alert">
-    <div class="col-auto">
-        <h6 class="visually-hidden">ID : {{ toDoList.id }}</h6>
-        <h6 class="visually-hidden">Name : {{ toDoList.name }}</h6>
-        <h6 class="visually-hidden">Description : {{ toDoList.description }}</h6>
-    </div>
-    
-<div class="col-auto">
-    <button (click) = "deleteTask()" type="submit" class="btn btn-primary mb-3">Delete</button>
-</div>
+        <h6 >ID : {{ toDoList.id }} </h6>
+        <h6 >Name : {{ toDoList.name }}</h6>
+        <button (click) = "deleteTask()" type="submit" class="btn btn-primary mb-3">Delete</button>
 </div>
 
